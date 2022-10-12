@@ -1,0 +1,13 @@
+<div class="document-container">
+  <div >
+    <p>
+      <strong>Name:</strong>
+      <%= document.name %>
+    </p>
+    </div>
+    <div>
+     <% if document.images.content_type.in?(%w[image/jpeg image/png])%>
+      <%= link_to image_tag(document.images, style:"width:150px; height:150px; object-fit:cover"), document.images if document.images.attached?%>
+      <%end%>
+    </div>
+</div>
