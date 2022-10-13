@@ -1,0 +1,10 @@
+<% @taskers.each do |tasker| %>
+    <p>
+      <%= link_to  tasker do %>
+       <div class="container mt-5 text-left">
+         <%= tasker.title%> ||
+        <%= tasker.start_time.strftime('%v %R %P')%>
+       </div>
+      <%end%>
+    </p>
+  <% end %>

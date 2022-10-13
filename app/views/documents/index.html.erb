@@ -17,5 +17,6 @@
        <%= button_to "Delete", document, method: :delete %>
     </p>
     <%= link_to "Download", welcome_documents_pdf_path(document) %>
+    <%# link_to "Download", rails_blob_path(document, disposition: "attachment") %>
   <% end %>
 </div>

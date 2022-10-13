@@ -43,7 +43,7 @@ class DocumentsController < ApplicationController
 
   def pdf
     @document = Document.find(params[:id])
-    pdf = Prawn::Document.new(:page_size => [800, 450], :top_margin => 0, :bottom_margin => 0, :left_margin => 0)
+    pdf = Prawn::Document.new(:page_size => [800, 800], :top_margin => 0, :bottom_margin => 0, :left_margin => 0)
     thumbnail_image = StringIO.open(@document.images.download)
     pdf.image thumbnail_image, fit:[800, 800]
     send_data(pdf.render,
