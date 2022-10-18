@@ -18,5 +18,8 @@
     </p>
     <%= link_to "Download", welcome_documents_pdf_path(document) %>
     <%# link_to "Download", rails_blob_path(document, disposition: "attachment") %>
+    <%# link_to rails_blob_path(document, disposition: "attachment") do %>
+          <%# image_tag "Download", alt: "Download file" %>
+        <%# end %>
   <% end %>
 </div>

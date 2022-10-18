@@ -1,7 +1,6 @@
 class DocumentsController < ApplicationController
   def index
-    @documents = Document.where(["name LIKE ?", "%#{params[:search]}%"])
-    @documents = Document.all.order("created_at DESC")
+       @documents = Document.where(["name LIKE ?", "%#{params[:search]}%"]).order("created_at DESC")
   end
 
   def show
@@ -41,8 +40,10 @@ class DocumentsController < ApplicationController
      redirect_to documents_url
   end
 
+  
   def pdf
     @document = Document.find(params[:id])
+    # Down.download(@document.images)
     pdf = Prawn::Document.new(:page_size => [800, 800], :top_margin => 0, :bottom_margin => 0, :left_margin => 0)
     thumbnail_image = StringIO.open(@document.images.download)
     pdf.image thumbnail_image, fit:[800, 800]
