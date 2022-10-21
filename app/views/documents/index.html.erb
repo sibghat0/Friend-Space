@@ -12,14 +12,17 @@
 
 <div  class="home-container">
   <% @documents.each do |document| %>
-    <%= render document %>
-    <p>
-       <%= button_to "Delete", document, method: :delete %>
-    </p>
-    <%= link_to "Download", welcome_documents_pdf_path(document) %>
+    <% if document.user_id == current_user.id %>
+      <%= render document %>
+    
+      <p>
+         <%= button_to "Delete", document, method: :delete %>
+      </p>
+      <%= link_to "Download", welcome_documents_pdf_path(document) %>
     <%# link_to "Download", rails_blob_path(document, disposition: "attachment") %>
     <%# link_to rails_blob_path(document, disposition: "attachment") do %>
           <%# image_tag "Download", alt: "Download file" %>
         <%# end %>
+    <% end %>
   <% end %>
 </div>

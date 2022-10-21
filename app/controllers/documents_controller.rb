@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
   def index
-       @documents = Document.where(["name LIKE ?", "%#{params[:search]}%"]).order("created_at DESC")
+    @documents = Document.where(["name LIKE ?", "%#{params[:search]}%"]).order("created_at DESC")
   end
 
   def show
@@ -8,7 +8,7 @@ class DocumentsController < ApplicationController
   end
 
   def new
-    @document = Document.new
+    @document = current_user.documents.build 
   end
 
   def edit
@@ -16,7 +16,7 @@ class DocumentsController < ApplicationController
   end
 
   def create
-    @document = Document.new(document_params)
+    @document = current_user.documents.build(document_params)
     if @document.save
       redirect_to documents_url(@document)
     else
@@ -44,12 +44,12 @@ class DocumentsController < ApplicationController
   def pdf
     @document = Document.find(params[:id])
     # Down.download(@document.images)
-    pdf = Prawn::Document.new(:page_size => [800, 800], :top_margin => 0, :bottom_margin => 0, :left_margin => 0)
-    thumbnail_image = StringIO.open(@document.images.download)
-    pdf.image thumbnail_image, fit:[800, 800]
-    send_data(pdf.render,
-    filename: "#{@document.name}.pdf",
-    type: 'application/pdf',
+    # pdf = Prawn::Document.new(:page_size => [800, 800], :top_margin => 0, :bottom_margin => 0, :left_margin => 0)
+    # thumbnail_image = StringIO.open(@document.images.download)
+    # pdf.image thumbnail_image, fit:[800, 800]
+    send_data(@document.images.download,
+    filename: "#{@document.name}.jpeg",
+    type: 'image/jpeg',
     )
   end
 

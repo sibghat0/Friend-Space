@@ -13,13 +13,9 @@
   </head>
 
   <body>
-  <div> 
-    <%= link_to 'Home', home_path %>
-    <%= link_to 'Documents',  documents_path %>
-    <%= link_to 'Task Schedular',  taskers_path %>
-    <%= link_to 'About us', about_path %>
-    <%= link_to 'Logout',  root_path %>
-  </div>
+   <%= render 'layouts/navbar'%>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

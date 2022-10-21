@@ -9,16 +9,16 @@ class TaskersController < ApplicationController
   end
 
   def new
-    @tasker = Tasker.new
+    @tasker = current_user.taskers.build
   end
 
   def edit
   end
 
   def create
-    @tasker = Tasker.new(tasker_params)
+    @tasker = current_user.taskers.build(tasker_params)
       if @tasker.save
-         redirect_to tasker_url(@tasker)
+         redirect_to taskers_url(@tasker)
       else
          render :new, status: :unprocessable_entity 
     end
