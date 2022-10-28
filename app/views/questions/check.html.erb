@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Questions check</h1>
+
+
+    <%= form_tag questions_path method: :get do  %>
+        <h4>Question 1 : <%= current_user.question1 %></h4>
+
+        <div class="field">
+            <%= label_tag :answer1, "Answer 1 : " %>
+            <%= text_field_tag :answer1, params[:answer1] %>
+        </div>
+        <br/>
+
+        <h4>Question 2 : <%= current_user.question2 %></h4>
+
+        <div class="field">
+            <%= label_tag :answer2, "Answer 2 : " %>
+            <%= text_field_tag :answer2, params[:answer2] %>
+        </div>
+        <%= submit_tag "Login"%>
+
+    <% end %>
+</div>

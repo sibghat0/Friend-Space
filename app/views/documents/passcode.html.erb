@@ -1,0 +1,21 @@
+<h3>Password Protected Download</h3>
+
+<%
+=begin%>
+ <label for="password">Password :</label>
+<input type="password" id="password" name="document[password]" placeholder="password" />
+<input type="submit" value="Download"> 
+<%
+=end%>
+<%= form_tag welcome_documents_pdf_path, :method => 'get' do %>
+    <%= label_tag(:passcode, "Password") %>
+    <%= password_field_tag :passcode, params[:passcode] %>
+    <%= submit_tag "Download"%>
+<% end %>
+<%
+=begin%>
+ <% if params[:passcode] == current_user.password %> 
+<%
+=end%>
+    <%# link_to "Download", welcome_documents_pdf_path(@document) %>
+

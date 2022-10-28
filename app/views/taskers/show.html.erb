@@ -6,4 +6,7 @@
   <%= link_to "Back to taskers", taskers_path %>
 
   <%= button_to "Destroy this tasker", @tasker, method: :delete %>
+  <% if @tasker.end_time.before?(Date.today)  %>
+    <%= link_to "edit",  edit_tasker_path(@tasker) %>
+  <%end%>
 </div>

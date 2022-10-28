@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
-
-.simple-calendar {
+ *= require simple_calendar 
+/* .simple-calendar {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
@@ -95,4 +95,4 @@
 
 .has-events {
   background-color: rgb(112, 195, 206);
-}
+} */

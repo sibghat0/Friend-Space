@@ -1,4 +1,5 @@
 <% @taskers.each do |tasker| %>
+<% if tasker.user_id == current_user.id %>
     <p>
       <%= link_to  tasker do %>
        <div class="container mt-5 text-left">
@@ -7,4 +8,5 @@
        </div>
       <%end%>
     </p>
+  <% end %>
   <% end %>

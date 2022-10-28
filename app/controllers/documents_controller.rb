@@ -53,6 +53,17 @@ class DocumentsController < ApplicationController
     )
   end
 
+  def passcode
+    @document = Document.find(params[:id])
+    # @document = User.find_by(current_user.id)
+    if current_user.password != params[:password]
+      redirect_to welcome_documents_pdf_path(@document)
+    else
+      # flash.now[:notice] = "Invalid Password"
+      puts "error"
+    end
+  end
+
   private
 
     def document_params
