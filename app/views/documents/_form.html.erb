@@ -1,7 +1,7 @@
 <%= form_with(model: document) do |form| %>
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.label :name, class: "new-doc-label"%>
+    <%= form.text_field :name, class: "new-doc-input" %>
   </div>
 
   <div>

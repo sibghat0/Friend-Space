@@ -1,9 +1,9 @@
 class QuestionsController < ApplicationController
   def check
-    if current_user.answer1 == :answer1
+    if current_user.answer1 == params[:answer1] && current_user.answer2 == params[:answer2]
         redirect_to home_path
     else
-        # redirect_to profile_path
+        # flash.now[:notice] = "Invalid Answer"
         puts 'error'
     end
 

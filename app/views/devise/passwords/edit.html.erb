@@ -16,6 +16,18 @@
     <%= f.label :password_confirmation, "Confirm new password" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+  <%
+=begin%>
+ <div class="field">
+    <%= f.label :answer1, "Confirm new Answer 1" %><br />
+    <%= f.text_field :answer1, autocomplete: "answer1" %>
+  </div>
+  <div class="field">
+    <%= f.label :answer2, "Confirm new Answer 2" %><br />
+    <%= f.text_field :answer2, autocomplete: "answer2" %>
+  </div> 
+<%
+=end%>
 
   <div class="actions">
     <%= f.submit "Change my password" %>

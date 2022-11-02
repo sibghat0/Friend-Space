@@ -1,28 +1,42 @@
-<p style="color: green"><%= notice %></p>
+<div class="doc">
 
-<h1>Documents</h1>
+  <p style="color: green"><%= notice %></p>
 
-<%= form_tag documents_path, :method => 'get' do %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search"%>
-<% end %>
+  <div class="doc-top">
+    <h1>Documents</h1>
 
-<%= link_to "New document", new_document_path %>
-
-
-<div  class="home-container">
-  <% @documents.each do |document| %>
-    <% if document.user_id == current_user.id %>
-      <%= render document %>
-    
-      <p>
-         <%= button_to "Delete", document, method: :delete %>
-      </p>
-      <%= link_to "Download", passcode_path(document) %>
-    <%# link_to "Download", rails_blob_path(document, disposition: "attachment") %>
-    <%# link_to rails_blob_path(document, disposition: "attachment") do %>
-          <%# image_tag "Download", alt: "Download file" %>
-        <%# end %>
+    <%= form_tag documents_path, :method => 'get' do %>
+        <%= text_field_tag :search, params[:search], class: "doc-input", placeholder: "Search..." %>
+        <%= submit_tag "Search", class: "doc-buttons"%>
     <% end %>
-  <% end %>
+  </div>
+
+
+  <div  class="doc-container">
+    <% @documents.each do |document| %>
+      <% if document.user_id == current_user.id %>
+        <div class="doc-card">
+          <%= render document %>
+          <%# document.name%>
+          <div class="doc-card-button">
+            <p>
+              <%= button_to "Delete", document, method: :delete, class: "doc-buttons1" %>
+            </p>
+            <%= link_to "Download", welcome_documents_pdf_path(document), class: "doc-buttons2" %>
+          </div>
+        </div>
+      <%# link_to "Download", rails_blob_path(document, disposition: "attachment") %>
+      <%# link_to rails_blob_path(document, disposition: "attachment") do %>
+            <%# image_tag "Download", alt: "Download file" %>
+          <%# end %>
+      <% end %>
+    <% end %>
+  </div>
+
+    <div class="doc-add">
+      <%= button_to new_document_path, class: "doc-add-button", method: :get do %>
+      <h4>+</h4>
+      <%end%>
+    </div>
+
 </div>

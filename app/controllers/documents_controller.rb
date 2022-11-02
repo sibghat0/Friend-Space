@@ -47,21 +47,24 @@ class DocumentsController < ApplicationController
     # pdf = Prawn::Document.new(:page_size => [800, 800], :top_margin => 0, :bottom_margin => 0, :left_margin => 0)
     # thumbnail_image = StringIO.open(@document.images.download)
     # pdf.image thumbnail_image, fit:[800, 800]
-    send_data(@document.images.download,
-    filename: "#{@document.name}.jpeg",
-    type: 'image/jpeg',
-    )
+    # puts("??????????????????????????????????????")
+    # puts (params)
+    # puts params[:passcode]
+    # puts (current_user.email)
+    # if current_user.email == params[:passcode]
+    #   puts("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+      @document = send_data(@document.images.download,
+      filename: "#{@document.name}.jpeg",
+      type: 'image/jpeg',
+      )
+    # else
+    #    flash.now[:notice] = "Invalid Password"
+    #   puts "error"
+    # end
   end
 
   def passcode
     @document = Document.find(params[:id])
-    # @document = User.find_by(current_user.id)
-    if current_user.password != params[:password]
-      redirect_to welcome_documents_pdf_path(@document)
-    else
-      # flash.now[:notice] = "Invalid Password"
-      puts "error"
-    end
   end
 
   private

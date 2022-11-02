@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   get 'taskers', to: 'taskers#click', as: 'taskers_click'
   get 'about', to: 'home#about'
   get 'Profile', to: 'home#profile', as: 'profile'
-  root 'home#home'
+  root 'questions#check'
 end

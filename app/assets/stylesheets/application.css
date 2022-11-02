@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
- *= require simple_calendar 
-/* .simple-calendar {
+
+.simple-calendar {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
@@ -95,4 +95,309 @@
 
 .has-events {
   background-color: rgb(112, 195, 206);
-} */
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.home-container .home-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 1rem;
+  position: sticky;
+  top: 0;
+  background-color: #ccc;
+  /* top: 0; */
+  border-radius: 10px;
+  margin-top: 0.5rem;
+}
+
+.home-container .home-top h6 {
+  font-size: 19px;
+  font-style: italic;
+  color: black;
+  padding-right: 4rem;
+}
+
+.home-container .home-side {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.home-container .home-side .home-pic {
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  background-color: #ccc;
+  width: 20%;
+  height: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 20px rgb(0 0 0 / 25%);
+}
+
+/*FOR DOCUMENT PAGE*/
+
+.doc {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.doc .doc-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 1rem;
+  position: sticky;
+  padding-right: 1rem;
+  top: 0;
+  background-color: #ccc;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+}
+
+.doc .doc-top .doc-input {
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  padding: 0.4rem;
+}
+
+.doc .doc-top .doc-buttons {
+  background-color: green;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 18px;
+  padding: 0.3rem 0.5rem;
+  text-decoration: none;
+  border: none;
+  transition: 0.5s;
+  box-shadow: 5px 15px 20px rgba(36, 34, 34, 0.4);
+}
+
+.doc .doc-top .doc-buttons:hover {
+  background-color: rgb(0, 0, 0);
+  transition: 0.5s;
+  box-shadow: 0px 15px 20px rgba(17, 17, 17, 0.4);
+}
+
+.doc .doc-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.doc .doc-container .doc-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  background-color: #ccc;
+  width: 20%;
+  height: 35%;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 20px rgb(0 0 0 / 25%);
+}
+
+.doc .doc-container .doc-card .doc-card-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 0.4rem;
+}
+
+.doc .doc-container .doc-card .doc-card-button .doc-buttons1 {
+  background-color: rgb(0, 0, 0);
+  border-radius: 20px;
+  font-size: 18px;
+  padding: 0.3rem 0.5rem;
+  text-decoration: none;
+  color: rgb(119, 119, 119);
+  border: none;
+  transition: 0.5s;
+  box-shadow: 5px 15px 20px rgba(36, 34, 34, 0.4);
+}
+
+.doc .doc-container .doc-card .doc-card-button .doc-buttons2 {
+  background-color: rgb(0, 0, 0);
+  border-radius: 20px;
+  font-size: 18px;
+  padding: 0.3rem 0.5rem;
+  text-decoration: none;
+  color: rgb(119, 119, 119);
+  border: none;
+  transition: 0.5s;
+  box-shadow: 5px 15px 20px rgba(36, 34, 34, 0.4);
+}
+
+.doc .doc-container .doc-card .doc-card-button .doc-buttons1:hover {
+  background-color: red;
+  color: #fff;
+  transition: 0.5s;
+  box-shadow: 0px 15px 20px rgba(17, 17, 17, 0.4);
+}
+.doc .doc-container .doc-card .doc-card-button .doc-buttons2:hover {
+  background-color: green;
+  color: #fff;
+  transition: 0.5s;
+  box-shadow: 0px 15px 20px rgba(17, 17, 17, 0.4);
+}
+
+.doc .doc-add {
+  position: fixed;
+  right: 7%;
+  bottom: 7%;
+}
+
+.doc .doc-add .doc-add-button {
+  background-color: rgb(0, 0, 0);
+  border-radius: 100%;
+  /* font-size: 18px; */
+  padding: 1rem;
+  width: 70px;
+  text-decoration: none;
+  color: rgb(119, 119, 119);
+  border: none;
+  transition: 0.5s;
+  box-shadow: 5px 25px 20px rgba(36, 34, 34, 0.4);
+}
+
+.doc .doc-add .doc-add-button:hover {
+  background-color: blue;
+  color: #fff;
+  transition: 0.5s;
+  box-shadow: 0px 15px 20px rgba(17, 17, 17, 0.4);
+}
+
+/* new document  */
+
+.new-doc-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-doc-container .new-doc-form {
+  width: 60%;
+  height: 70%;
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  align-items: center;
+  box-shadow: 0 0 20px rgb(0 0 0 / 25%);
+}
+
+/* question */
+
+.question-container {
+  position: absolute;
+  z-index: 1;
+  /* left: 0; */
+  background-color: rgb(235, 235, 235);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-container .question-form {
+  width: 60%;
+  height: 70%;
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  align-items: center;
+  box-shadow: 0 0 20px rgb(0 0 0 / 25%);
+}
+
+.question-container .question-form h1 {
+  width: 100%;
+  text-align: start;
+  margin: 1rem 0 2rem 2.5rem;
+}
+
+.question-container .question-form .question-field {
+  margin-bottom: 1rem;
+}
+
+.question-container .question-form .question-field .answer-field {
+  margin-top: 1.5rem;
+}
+
+.question-container .question-form .question-field .answer-field .answer-label {
+  font-size: 20px;
+  font-style: bold;
+  color: rgb(45, 48, 46);
+}
+
+.question-container .question-form .question-field .answer-field .answer-input {
+  border: none;
+  padding: 0.3rem;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 5px 15px 20px rgba(36, 34, 34, 0.4);
+}
+
+.question-container .question-form .question-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 70%;
+}
+
+.question-container .question-form .question-bottom .question-button {
+  background-color: rgb(0, 0, 0);
+  border-radius: 20px;
+  font-size: 18px;
+  padding: 0.3rem 0.5rem;
+  text-decoration: none;
+  color: rgb(119, 119, 119);
+  border: none;
+  transition: 0.5s;
+  box-shadow: 5px 15px 20px rgba(36, 34, 34, 0.4);
+}
+
+.question-container .question-form .question-bottom .question-button:hover {
+  background-color: #fff;
+  color: #000;
+  transition: 0.5s;
+  transform: translateY(-5px);
+  border: 1px solid #000;
+  box-shadow: 0px 15px 20px rgba(17, 17, 17, 0.4);
+}
+
+.document-container {
+  width: 100%;
+  height: 100%;
+}

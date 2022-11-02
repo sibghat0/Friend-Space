@@ -9,7 +9,7 @@
 =end%>
 <%= form_tag welcome_documents_pdf_path, :method => 'get' do %>
     <%= label_tag(:passcode, "Password") %>
-    <%= password_field_tag :passcode, params[:passcode] %>
+    <%= email_field_tag :passcode, params[:passcode] %>
     <%= submit_tag "Download"%>
 <% end %>
 <%

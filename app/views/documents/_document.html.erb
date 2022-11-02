@@ -1,13 +1,12 @@
-<div class="document-container">
-  <div >
-    <p>
-      <strong>Name:</strong>
-      <%= document.name %>
-    </p>
-    </div>
+<div class="document-display">
     <div>
      <% if document.images.content_type.in?(%w[image/jpeg image/png])%>
       <%= link_to image_tag(document.images, style:"width:150px; height:150px; object-fit:cover"), document.images if document.images.attached?%>
       <%end%>
+    </div>
+    <div >
+      <h6 style="margin: 0px; padding-top: 5px">
+        <%= document.name %>
+      </h6>
     </div>
 </div>

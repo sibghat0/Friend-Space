@@ -1,9 +1,16 @@
-<div class="cont mt-2 ">
-<h1>Welcome </h1>
-  <% @documents.each do |home| %>
+<div class="home-container ">
+  <div class="home-top">
+    <h1>Welcome </h1>
+    <h6><%= current_user.user_name %></h6>
+  </div>
+  <div class="home-side">
+    <% @documents.each do |home| %>
       <% if home.user_id == current_user.id %>
-    <%= render home %>
-    <hr/>
+        <div class="home-pic">
+          <%= render home %>
+        </div>
+        <hr/>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
