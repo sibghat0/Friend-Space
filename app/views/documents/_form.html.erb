@@ -1,16 +1,45 @@
-<%= form_with(model: document) do |form| %>
-  <div>
-    <%= form.label :name, class: "new-doc-label"%>
-    <%= form.text_field :name, class: "new-doc-input" %>
-  </div>
+<div style="display:flex;
+      flex-direction: column;
+      justify-content:space-between;
+      align-items: space-between;
+      height:100%;
+      margin-top:0.5rem">
+  <%= form_with(model: document) do |form| %>
+    <div style="margin: 0 1rem ">
+      <%= form.label :name, style: "font-size: 20px;  font-weight: 600; margin-right:0.5rem; margin-bottom:0.5rem"%>
+      <%= form.text_field :name, placeholder: "Enter the title" ,style: "outline: none;
+      padding: 0.3rem;
+      border-radius: 5px;
+      box-shadow: 5px 15px 20px rgba(36, 34, 34, 0.4);
+      border: none;
+      width:90%;
+      margin-left:5px" %>
+    </div>
 
-  <div>
-    <%= form.label :images %>
-    <%= form.file_field :images %>
-  </div>
+    <div style="width: 83%;
+      height: 70%; 
+      border: 2px solid blue; 
+      margin-right:2rem;
+      display:flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items:flex-start;
+      padding-left: 1rem;
+      margin: 1.5rem;
+      ">
+      <%= form.label :images, style: "font-size: 18px" %>
+      <%= form.file_field :images %>
+    </div>
 
 
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div style="margin-top:1.5rem;
+      display: flex;
+      justify-content:space-between;
+      width: 100%
+    ">
+      <%= form.submit  class: "new-doc-button" %>
+      <%= link_to "Back to documents", documents_path, class: "new-doc-button" %>
+    </div>
+  <% end %>
+</div>
+

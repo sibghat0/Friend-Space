@@ -1,28 +1,26 @@
-<div class="nav-index" style="display: flex; flex-direction: column; justify-content: flex-start; width: 20%;" > 
+<div class="nav-index" > 
 <% if user_signed_in? %>
     <%# current_user.user_name%>
-   <div class="nav-cont">
+   <div>
     <div class="nav">
-        <i class="fa-regular fa-house"></i> 
-        <%= link_to 'Home', home_path %>
+        <%= link_to 'Home', home_path, class: "nav-link" %>
          
     </div>
     <div class="nav">
-        <i class="fa-light fa-file"></i>
-        <%= link_to 'Documents',  documents_path %>
+        <%= link_to 'Documents',  documents_path, class: "nav-link" %>
     </div>
     <div class="nav">
         <i class="fa-regular fa-clipboard-list-check"></i>
-        <%= link_to 'Task Schedular',  taskers_path %>
+        <%= link_to 'Task Schedular',  taskers_path, class: "nav-link" %>
     </div>
     <div class="nav">
-        <%= link_to "Profile", profile_path %>
+        <%= link_to "Profile", profile_path, class: "nav-link" %>
     </div>
     <div class="nav">
-        <%= link_to 'About us', about_path %>
+        <%= link_to 'About us', about_path, class: "nav-link" %>
     </div>
-    <div class="nav-logout">
-        <%= link_to "Log out", users_sign_out_path, method: :delete %>
+    <div class="nav">
+        <%= link_to "Log out", users_sign_out_path, method: :delete, class: "nav-link" %>
     </div>
    </div>
 <% else %>
