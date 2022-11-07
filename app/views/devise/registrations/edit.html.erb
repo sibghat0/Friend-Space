@@ -1,69 +1,87 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="edit-cont">
+  <div class="signup-edit-cont">
+  <div class="form-signin"> 
+    <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :user_name %><br />
-    <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name" %>
-  </div>
+     <div class="sign-design">
+        <div class="form-floating">
+          <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name",  class: "form-control", id: "floatingInput", placeholder: "User Name" %>
+          <%= f.label :user_name %>
+        </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+        <div class="form-floating">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id: "floatingInput", placeholder: "name@example.com" %>
+          <%= f.label :email %>
+        </div> 
+      </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+        <% if @minimum_password_length %>
+          <br />
+          <em><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
+    <div class="sign-design">
+      <div class="form-floating">
+        <%= f.password_field :password, autocomplete: "new-password",  class: "form-control", id: "floatingInput", placeholder: "Password" %>
+        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+      <div class="form-floating">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password",  class: "form-control", id: "floatingInput", placeholder: "Confirm Password" %>
+        <%= f.label :password_confirmation %><br />
+      </div>
+    </div><br/>
+    <div class="sign-design">
+      <div class="form-floating">
+        <%= f.password_field :current_password,  class: "form-control", id: "floatingInput", placeholder: "Current Password" %>
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      </div>
+    </div><br/>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password %>
-  </div>
+   <div class="sign-design">
+        <div class="form-floating">
+          <%= f.text_field :question1, autofocus: true, autocomplete: "question1",  class: "form-control", id: "floatingInput", placeholder: "Question" %>
+          <%= f.label :question1, "Question 1" %><br />
+        </div>
 
-    <div class="field">
-    <%= f.label :question1, "Question 1" %><br />
-    <%= f.text_field :question1, autofocus: true, autocomplete: "question1" %>
-  </div>
+        <div class="form-floating">
+          <%= f.text_field :answer1, autofocus: true, autocomplete: "answer1",  class: "form-control", id: "floatingInput", placeholder: "Answer" %>
+          <%= f.label :answer1, "Answer 1" %><br />
+        </div>
+      </div>
 
-  <div class="field">
-    <%= f.label :answer1, "Answer 1" %><br />
-    <%= f.text_field :answer1, autofocus: true, autocomplete: "answer1" %>
-  </div>
+      <div class="sign-design">
+            <div class="form-floating">
+              <%= f.text_field :question2, autofocus: true, autocomplete: "question2",  class: "form-control", id: "floatingInput", placeholder: "Question" %>
+              <%= f.label :question2, "Question 2" %><br />
+            </div>
 
-  <div class="field">
-    <%= f.label :question2, "Question 2" %><br />
-    <%= f.text_field :question2, autofocus: true, autocomplete: "question2" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :answer2, "Answer 2" %><br />
-    <%= f.text_field :answer2, autofocus: true, autocomplete: "answer2" %>
-  </div><br/>
-
+            <div class="form-floating">
+              <%= f.text_field :answer2, autofocus: true, autocomplete: "answer2", class: "form-control", id: "floatingInput", placeholder: "Answer" %>
+              <%= f.label :answer2, "Answer 2" %><br />
+            </div>
+          </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class: "signup-button" %>
   </div>
 <% end %>
+ </div>
+</div>
+<div class="edit-design">
+  <div class="delete-acc">
+  <h3>Delete my account</h3>
 
-<h3>Delete my account</h3>
+  <p>Having issues? <%= button_to "Delete account", registration_path(resource_name), method: :delete, data: { confirm: "Are you sure?" }, class: "edit-buttons"  %></p>
 
-<p>Having issues? <%= button_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+  <%= link_to "Back", :back, class: "edit-buttons1" %>
+  </div>
 
-<%= link_to "Back", :back %>
+  </div>
+</div>

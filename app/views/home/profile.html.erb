@@ -1,6 +1,11 @@
-<div class="container">  
-<h1>Profile</h1>
-<h5>Name : <%= current_user.user_name%></h5>
-<h5>Email : <%= current_user.email%></h5>
-<h5>Account setting : <%= link_to "Edit Account", edit_user_registration_path %></h5>
+<div class="profile-cont">  
+    <div class="profile-box">
+        <h1>Profile</h1>
+        <h5>Name : <%= current_user.user_name%></h5>
+        <h5>Email : <%= current_user.email%></h5>
+        <h5>Account setting : <%= link_to "Edit Account", edit_user_registration_path %></h5>
+    </div>
+    <div class="profile-box">
+    <%= image_tag("profile.png", style: "width: 400px") %>
+    </div>
 </div>

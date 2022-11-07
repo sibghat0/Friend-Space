@@ -1,9 +1,8 @@
-<h1>New tasker</h1>
-
-<%= render "form", tasker: @tasker %>
-
-<br>
-
-<div>
-  <%= link_to "Back to taskers", taskers_path %>
+<div class="task-new">
+  <div class="task-new-box">
+    <h1>New tasker</h1>
+      <div class="task-new-button">
+      <%= render "form", tasker: @tasker %>
+      </div>
+  </div>
 </div>

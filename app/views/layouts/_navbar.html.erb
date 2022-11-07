@@ -1,5 +1,5 @@
-<div class="nav-index" > 
 <% if user_signed_in? %>
+<div class="nav-index" > 
     <%# current_user.user_name%>
    <div>
     <div class="nav">
@@ -23,12 +23,16 @@
         <%= link_to "Log out", users_sign_out_path, method: :delete, class: "nav-link" %>
     </div>
    </div>
-<% else %>
-    <div class="nav-auth">
-        <%= link_to "Login", new_user_session_path %>
-        <%= link_to "Register", new_user_registration_path %>
-    </div>
-<% end %>
   </div>
+<% else %>
+<div class="nav-login">
+    <div class="nav">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+    </div>
+     <div class="nav">
+        <%= link_to "Register", new_user_registration_path, class: "nav-link" %>
+    </div>  
+</div>
+<% end %>
 
   

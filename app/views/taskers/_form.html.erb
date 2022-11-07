@@ -1,25 +1,62 @@
+<div style="display:flex;
+      flex-direction: column;
+      justify-content:space-between;
+      align-items: space-between;
+      height:100%;
+      margin-top:0.5rem">
 <%= form_with(model: tasker) do |form| %>
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div style="margin: 1rem 0 ">
+    <%= form.label :title, style: "font-size: 20px;  font-weight: 600; margin-right:0.5rem; margin-bottom:0.5rem" %>
+    <%= form.text_field :title, placeholder: "Event title", style: "outline: none;
+      padding: 0.3rem;
+      border-radius: 5px;
+      box-shadow: 5px 15px 20px rgba(36, 34, 34, 0.4);
+      border: none;
+      width:90%;
+      margin-left:5px" %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.label :description, style: "font-size: 20px;  font-weight: 600; margin-right:0.5rem; margin-bottom:0.5rem" %>
+    <%= form.text_area :description, placeholder: "Event descripition", style: "outline: none;
+      padding: 0.3rem;
+      border-radius: 5px;
+      box-shadow: 5px 15px 20px rgba(36, 34, 34, 0.4);
+      border: none;
+      width:90%;
+      margin-left:5px" %>
   </div>
 
   <div>
-    <%= form.label :start_time, style: "display: block" %>
-    <%= form.datetime_field :start_time %>
+    <%= form.label :start_time, style: "font-size: 20px;  font-weight: 600; margin-right:0.5rem; margin-bottom:0.5rem"%>
+    <%= form.datetime_field :start_time, style: "outline: none;
+      padding: 0.3rem;
+      border-radius: 5px;
+      box-shadow: 5px 15px 20px rgba(36, 34, 34, 0.4);
+      border: none;
+      width:90%;
+      margin-left:5px;
+      margin-bottom:0.5rem"  %>
   </div>
 
   <div>
-    <%= form.label :end_time, style: "display: block" %>
-    <%= form.datetime_field :end_time %>
+    <%= form.label :end_time, style: "font-size: 20px;  font-weight: 600; margin-right:0.5rem; margin-bottom:0.5rem"  %>
+    <%= form.datetime_field :end_time, style: "outline: none;
+      padding: 0.3rem;
+      border-radius: 5px;
+      box-shadow: 5px 15px 20px rgba(36, 34, 34, 0.4);
+      border: none;
+      width:90%;
+      margin-left:5px"  %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div style="margin-top:1.5rem;
+      display: flex;
+      justify-content:space-between;
+      width: 100%
+    ">
+    <%= form.submit class: "new-doc-button" %>
+    <%= link_to "Back to taskers", taskers_path, class: "new-doc-button" %>
   </div>
 <% end %>
+</div>

@@ -1,6 +1,5 @@
 <div class="container text-center">
 <h1>Task Schedular</h1>
-<%= link_to "New task", new_tasker_path %> </br>
 <%= month_calendar(events: @taskers) do |date, taskers| %>
         <div class="dayCont">
             <%= date.day%>
@@ -9,23 +8,28 @@
                     <% if tasker.end_time.after?(Date.today)  %>
                     <div class="card-header-cal">
                         <p class="cardTitle">
-                            <%= link_to tasker.title, tasker %>
+                            <%= link_to tasker.title, tasker, class: "event-button" %>
                         </p>
                     </div>
                     <% else%>
                     <div class="card-header-cal">
                         <p class="cardTitle">
-                            <P>Time exceeded 
-                            <%= tasker.end_time.strftime('%r')%> 
-                            <%= link_to tasker.title, tasker %>
-                            
+                            <P style="border:1px solid #000">Time exceeded 
+                            <%= tasker.end_time.strftime('%r')%> </p>
+                            <%= link_to tasker.title, tasker, class: "event-button1" %>
                         </p>
+                            
                     </div>
                     <%end%>
                 <%end%>
             <%end%>
         </div>
 <%end%>
+    <div class="task-add">
+      <%= button_to new_tasker_path, class: "task-add-button", method: :get do %>
+      <h4>+</h4>
+      <%end%>
+    </div>
 </div>
 
 

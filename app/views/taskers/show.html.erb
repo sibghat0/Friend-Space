@@ -1,12 +1,22 @@
-<p style="color: green"><%= notice %></p>
+<div class="task-show">
+ <div class="task-show-design">
+    <p style="color: green"><%= notice %></p>
+    <h1>Event</h1>
 
-<%= render @tasker %>
+    <%= render @tasker %>
 
-<div>
-  <%= link_to "Back to taskers", taskers_path %>
+    <div>
+      <div class="task-button-sec">
+        <%= link_to "Back to taskers", taskers_path, class: "task-show-button" %>
 
-  <%= button_to "Destroy this tasker", @tasker, method: :delete %>
-  <% if @tasker.end_time.before?(Date.today)  %>
-    <%= link_to "edit",  edit_tasker_path(@tasker) %>
-  <%end%>
+        <%= button_to "Destroy this tasker", @tasker, method: :delete, class: "task-show-button1" %>
+      </div>
+      <% if @tasker.end_time.before?(Date.today)  %>
+       <div class="task-edit">
+         <%= link_to "Change the date",  edit_tasker_path(@tasker), class: "task-show-button2" %>
+       </div>
+      <%end%>
+    </div>
+
+ </div>
 </div>

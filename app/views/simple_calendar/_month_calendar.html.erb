@@ -1,12 +1,12 @@
-<div class="simple-calendar">
-  <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view %>
-    <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
-    <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %>
+<div class="simple-calendar"  >
+  <div class="calendar-heading" style="font-size: 18px;padding-top:0.5rem">
+    <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, class: "calender-button" %>
+    <span class="calendar-title" style=" border: 1px solid #000 !important;padding:0.2rem"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+    <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view, class: "calender-button" %>
   </div>
 
-  <table class="table table-striped">
-    <thead>
+  <table class="table table-striped" style="height: 93%;">
+    <thead style="font-size: 18px;">
       <tr>
         <% date_range.slice(0, 7).each do |day| %>
           <th><%= t('date.abbr_day_names')[day.wday] %></th>
