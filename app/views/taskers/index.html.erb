@@ -1,11 +1,11 @@
-<div class="container text-center">
+<div class="container text-center" style="height: 100vh">
 <h1>Task Schedular</h1>
 <%= month_calendar(events: @taskers) do |date, taskers| %>
         <div class="dayCont">
             <%= date.day%>
             <% taskers.each do |tasker| %>
                 <% if tasker.user_id == current_user.id %>
-                    <% if tasker.end_time.after?(Date.today)  %>
+                    <% if tasker.end_time.after?(Date.today) %>
                     <div class="card-header-cal">
                         <p class="cardTitle">
                             <%= link_to tasker.title, tasker, class: "event-button" %>
@@ -14,8 +14,8 @@
                     <% else%>
                     <div class="card-header-cal">
                         <p class="cardTitle">
-                            <P style="border:1px solid #000">Time exceeded 
-                            <%= tasker.end_time.strftime('%r')%> </p>
+                            <P style="border:1px solid #000;">Time exceeded 
+                            <%= tasker.end_time.strftime('%d/%m/%Y')%> </p>
                             <%= link_to tasker.title, tasker, class: "event-button1" %>
                         </p>
                             

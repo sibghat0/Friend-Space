@@ -1,10 +1,16 @@
-<h1>Editing tasker</h1>
 
+<div class="cal" style="display:flex; flex-direction:column; height:100%; margin-left:20%; margin-top:3%; ">
+<h1>Editing tasker</h1>
 <%= render "form", tasker: @tasker %>
+</div>
 
 <br>
 
-<div>
+<%
+=begin%>
+ <div>
   <%= link_to "Show this tasker", @tasker %> |
   <%= link_to "Back to taskers", taskers_path %>
-</div>
+</div> 
+<%
+=end%>

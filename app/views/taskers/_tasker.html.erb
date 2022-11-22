@@ -10,13 +10,13 @@
   </p>
 
   <p>
-    <strong>Start time:</strong>
-    <i style="margin-left:0.3rem"><%= tasker.start_time %></i>
+    <strong>Start Date:</strong>
+    <i style="margin-left:0.3rem"><%= tasker.start_time.strftime('%d-%m-%Y') %></i>
   </p>
 
   <p>
-    <strong>End time:</strong>
-    <i style="margin-left:0.3rem"><%= tasker.end_time %></i>
+    <strong>End Date:</strong>
+    <i style="margin-left:0.3rem"><%= tasker.end_time.strftime('%d-%m-%Y') %></i>
   </p>
 
 </div>

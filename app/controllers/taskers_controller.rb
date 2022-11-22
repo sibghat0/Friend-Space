@@ -49,4 +49,6 @@ class TaskersController < ApplicationController
     def tasker_params
       params.require(:tasker).permit(:title, :description, :start_time, :end_time)
     end
+
+    
 end

@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+  # before_action :questioncheck
   def index
     @documents = Document.where(["name LIKE ?", "%#{params[:search]}%"]).order("created_at DESC")
   end
@@ -72,4 +73,11 @@ class DocumentsController < ApplicationController
     def document_params
       params.require(:document).permit(:name, :images)
     end
-end
+
+    # def questioncheck 
+    #   unless @check
+    #     flash[:error] = "deklo bhai"
+    #     redirect_to questions_path
+        
+    #   end
+    end

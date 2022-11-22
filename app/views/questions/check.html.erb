@@ -1,4 +1,5 @@
 <% if current_user.present? %>
+    
  
     <div class="question-container">
         <div class="question-form">
@@ -11,7 +12,7 @@
 
                         <div class="answer-field">
                             <%= label_tag :answer1, "Answer 1 : ", class: "answer-label" %>
-                            <%= text_field_tag :answer1, params[:answer1], class: "answer-input", placeholder: "Enter the answer...." %>
+                            <%= password_field_tag :answer1, params[:answer1], class: "answer-input", placeholder: "Enter the answer...." %>
                         </div>
                     <br/>
                 </div>
@@ -21,7 +22,7 @@
 
                     <div class="answer-field">
                         <%= label_tag :answer2, "Answer 2 : ", class: "answer-label" %>
-                        <%= text_field_tag :answer2, params[:answer2], class: "answer-input", placeholder: "Enter the answer...." %>
+                        <%= password_field_tag :answer2, params[:answer2], class: "answer-input", placeholder: "Enter the answer...." %>
                     </div>
                 </div>
             <div class="question-bottom">
